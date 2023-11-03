@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textlet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/11a2fb163c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="sample-toolbar">
+        <a href="javascript:void(0)" onclick="format('bold')"><span class="fa fa-bold fa-fw"></span>
+        </a>
+        <a href="javascript:void(0)" onclick="format('italic')">
+            <span class="fa fa-italic fa-fw"></span>            
+        </a>
+        <a href="javascript:void(0)" onclick="format('insertunorderedlist')">
+        <span class="fa fa-list fa-fw"></span>
+        </a>
+        <a href="javascript:hover(0)">
+            <span class="fa fa-link fa-fw" onclick="seturl()"></span>
+        </a>
+        <span><input placeholder="url" id="txtFormatUrl" class="form-control"></span>
+    </div>
+    <div class="editor" id="sampleeditor">
+
+    </div>
+</body>
+
+</html>
