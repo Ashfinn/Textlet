@@ -1,13 +1,11 @@
 window.addEventListener('load', function(){
     document.getElementById('sampleeditor').setAttribute('contenteditable', 'true');
-    document.getElementById('sampleeditor2').setAttribute('contenteditable', 'true');
-
 });
 function format(command, value) {
     document.execCommand(command, false, value);
 }
-function seturl() {
-    let url = document.getElementById('txtUrl').value;
+function setUrl() {
+    let url = document.getElementById('txtFormatUrl').value;
     let stext = document.getSelection();
 
     document.execCommand('insertHTML', false, `<a href="${url}" target="_blank">${stext}</a>`);
