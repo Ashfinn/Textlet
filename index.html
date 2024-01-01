@@ -5,40 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Textlet</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/11a2fb163c.js" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <h1>Textlet</h1>
-    </header>
+<body class="bg-dark">
+    <div class="container">
+        <h1 class="text-center my-4" style="background-color: #ddd;">Textlet Text Editor</h1>
+        <div class="toolbar">
+            <button onclick="format('bold')" class="btn btn-primary">Bold</button>
+            <button onclick="format('italic')" class="btn btn-secondary">Italic</button>
+            <button onclick="format('justifyLeft')" class="btn btn-info">Align Left</button>
+            <button onclick="format('justifyCenter')" class="btn btn-info">Center</button>
+            <button onclick="format('justifyRight')" class="btn btn-info">Align Right</button>
+            <select onchange="format('fontSize', this.value)" class="btn btn-light">
+                <option value="3">Normal</option>
+                <option value="4">Large</option>
+                <option value="5">Extra Large</option>
+                <option value="6">Huge</option>
+            </select>
+            <button onclick="setUrl()" class="btn btn-success">Add Link</button>
+        </div>
+        <div id="sampleeditor" class="editor-container" contenteditable="true"></div>
+        <input type="text" id="txtFormatUrl" placeholder="Enter URL" class="form-control my-2">
+    </div>
 
-    <main>
-            <div class="sample-toolbar">
-                <button onclick="format('bold')"><span class="fa fa-bold fa-fw"></span>
-                </button>
-                <button onclick="format('italic')">
-                    <span class="fa fa-italic fa-fw"></span>
-                </button>
-                <button onclick="format('insertunorderedlist')">
-                    <span class="fa fa-list fa-fw"></span>
-                </button>
-                <button>
-                    <span class="fa fa-link fa-fw" onclick="setUrl()"></span>
-                </button>
-                <span><input placeholder="url" id="txtFormatUrl" class="form-control"></span>
-            </div>
-            <div class="editor" id="sampleeditor">
-
-            </div>
-
-    </main>
-
-    <footer>
-            <p>This is a simple text editor with basic functionalities</p>
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Obidur Rahman</span>
+        </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
