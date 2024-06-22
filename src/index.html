@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textlet</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="bg-light text-dark light-mode">
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-center">Textlet Text Editor</h1>
+            <button id="toggle-dark-mode" class="btn btn-secondary">Toggle Dark Mode</button>
+        </div>
+        <div class="toolbar btn-group mb-2 d-flex flex-wrap">
+            <button onclick="format('bold')" class="btn btn-outline-primary" aria-label="Bold">
+                <i class="fas fa-bold"></i>
+            </button>
+            <button onclick="format('italic')" class="btn btn-outline-success" aria-label="Italic">
+                <i class="fas fa-italic"></i>
+            </button>
+            <button onclick="format('underline')" class="btn btn-outline-danger" aria-label="Underline">
+                <i class="fas fa-underline"></i>
+            </button>
+            <button onclick="format('strikethrough')" class="btn btn-outline-warning" aria-label="Strikethrough">
+                <i class="fas fa-strikethrough"></i>
+            </button>
+            <button onclick="format('justifyLeft')" class="btn btn-outline-info" aria-label="Align Left">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <button onclick="format('justifyCenter')" class="btn btn-outline-info" aria-label="Center">
+                <i class="fas fa-align-center"></i>
+            </button>
+            <button onclick="format('justifyRight')" class="btn btn-outline-info" aria-label="Align Right">
+                <i class="fas fa-align-right"></i>
+            </button>
+            <select onchange="format('fontSize', this.value)" class="btn btn-outline-dark" aria-label="Font Size">
+                <option value="3">Normal</option>
+                <option value="4">Large</option>
+                <option value="5">Extra Large</option>
+                <option value="6">Huge</option>
+            </select>
+            <input type="color" onchange="format('foreColor', this.value)" class="btn btn-outline-dark ml-2"
+                aria-label="Text Color">
+            <button onclick="setUrl()" class="btn btn-outline-primary ml-2" aria-label="Add Link">
+                <i class="fas fa-link"></i>
+            </button>
+        </div>
+        <div id="sampleeditor" class="editor-container"></div>
+        <input type="text" id="txtFormatUrl" placeholder="Enter URL" class="form-control my-2">
+
+        <button id="instructionsBtn" class="btn btn-info mt-3">Instructions</button>
+    </div>
+
+    <div id="instructionsModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">How to Use Textlet</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><strong>Bold:</strong> Select text and click the <i class="fas fa-bold"></i> button.</li>
+                        <li><strong>Italic:</strong> Select text and click the <i class="fas fa-italic"></i> button.
+                        </li>
+                        <li><strong>Underline:</strong> Select text and click the <i class="fas fa-underline"></i>
+                            button.</li>
+                        <li><strong>Strikethrough:</strong> Select text and click the <i
+                                class="fas fa-strikethrough"></i> button.</li>
+                        <li><strong>Align Left:</strong> Click the <i class="fas fa-align-left"></i> button.</li>
+                        <li><strong>Center:</strong> Click the <i class="fas fa-align-center"></i> button.</li>
+                        <li><strong>Align Right:</strong> Click the <i class="fas fa-align-right"></i> button.</li>
+                        <li><strong>Font Size:</strong> Select a size from the dropdown menu.</li>
+                        <li><strong>Text Color:</strong> Pick a color from the color input.</li>
+                        <li><strong>Add Link:</strong> Enter a URL and select text, then click the <i
+                                class="fas fa-link"></i> button.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-white text-center py-3">
+        <div class="container">
+            <span class="text-muted">&copy; Obidur Rahman</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
