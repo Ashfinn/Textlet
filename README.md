@@ -16,9 +16,7 @@ Textlet is a simple and intuitive text editor built using HTML, CSS, and JavaScr
 You can try out the Textlet editor [here](https://ashfinn.github.io/Textlet/).
 
 ## Screenshots
-
-![desktop](img\desktop.png)
-![mobile](img\mobile.png)
+<img src="img\desktop.png"><img src="img\mobile.png">
 
 ## Usage
 
